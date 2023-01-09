@@ -23,6 +23,18 @@ while (!(parseInt(passwordLength)>=10 && parseInt(passwordLength)<=64)){
 console.log('Password lemgth: ',passwordLength);
 
 while (i===0){
+  //Prompt for the character type: numeric
+  var numericConfirm = window.prompt("Do you want to include numeric characters into your password? Please type'Y' or 'N'.", "'Y' or 'N'").toUpperCase();
+  //Validation for the numeric character
+  while (!(numericConfirm==='Y'||numericConfirm==='N')){
+    numericConfirm = window.prompt("Your selection was incorrect! Please try again! Do you want to include numeric characters into your password? Please type 'Y' or 'N'.").toUpperCase();
+  }
+  //If 'Y' is selected
+  if (numericConfirm==='Y'){
+    i++;
+  }
+  
+  
   //Prompt for the character type: special
   var specialCharactersConfirm = window.prompt("Do you want to include special characters into your password? Please type 'Y' or 'N'.", "'Y' or 'N'").toUpperCase();
   //Validation for the special character
