@@ -1,5 +1,13 @@
 // Password Generator: 10 characters but no more than 64
 
+  // Get references to the #generate element
+  var generateBtn = document.querySelector('#generate');
+
+// Function to generate password with user input
+function generatePassword() {
+  var generatedPassword = '';
+}
+
     // Four character types options
     var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',',')','(','}','{',']','[','~','-','_','.'];
     var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -10,14 +18,11 @@
 i=0;
 j=0;
 
-    // Function to prompt user for password options
-function getPasswordOptions() {
 // Password length prompt
-var passwordLength = parseInt(window.prompt("How long do you want your password to be? Please select from min 10 to max 64 characters!","Select the password length, e.g. '12'"));
+var passwordLength = parseInt(window.prompt("How long do you want your password to be? Please select from min 10 to max 64 characters!", "Select the password length, e.g. '12'"));
 // Password length validation
 while (!(parseInt(passwordLength)>=10 && parseInt(passwordLength)<=64)){
-  passwordLength = parseInt(window.prompt("Your selection was incorrect! Please try again! How long do you want your password to be? Please select from min 10 to max 64 characters!","Select the password length, e.g. '12'"));
-}
+  passwordLength = parseInt(window.prompt("Your selection was incorrect! Please try again! How long do you want your password to be? Please select from min 10 to max 64 characters!", "Select the password length, e.g. '12'"));
 }
 
 console.log('Password lemgth: ',passwordLength);
@@ -68,18 +73,17 @@ if (uppercaseConfirm==='Y'){
   i++;
 }
 
+
+
+// Function to prompt user for password options
+function getPasswordOptions() {
+
+}
+
 // Function for getting a random element from an array
 function getRandom(arr) {
 
 }
-
-// Function to generate password with user input
-function generatePassword() {
-var generatedPassword = '';
-}
-
-// Get references to the #generate element
-var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
