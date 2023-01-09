@@ -34,7 +34,6 @@ while (i===0){
     i++;
   }
   
-  
   //Prompt for the character type: special
   var specialCharactersConfirm = window.prompt("Do you want to include special characters into your password? Please type 'Y' or 'N'.", "'Y' or 'N'").toUpperCase();
   //Validation for the special character
@@ -45,7 +44,6 @@ while (i===0){
   if (specialCharactersConfirm==='Y'){
     i++;
   }
-  
   
   // Prompt for the character type: lowercase
   var lowercaseConfirm = window.prompt("Do you want to include lowercase characters into your password? Please type 'Y' or 'N'.", "'Y' or 'N'").toUpperCase();
