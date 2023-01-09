@@ -16,11 +16,25 @@ function getPasswordOptions() {
 var passwordLength = parseInt(window.prompt("How long do you want your password to be? Please select from min 10 to max 64 characters!","Select the password length, e.g. '12'"));
 // Password length validation
 while (!(parseInt(passwordLength)>=10 && parseInt(passwordLength)<=64)){
-  passwordLength = parseInt(window.prompt("Your selection was incorrect! Please tery again!How long do you want your password to be?Please select from min 10 to max 64 characters!","Select the password length, e.g. '12'"));
+  passwordLength = parseInt(window.prompt("Your selection was incorrect! Please try again! How long do you want your password to be?Please select from min 10 to max 64 characters!","Select the password length, e.g. '12'"));
 }
 }
 
 console.log('Password lemgth: ',passwordLength);
+
+while (i===0){
+  // Prompt for the character type: lowercase
+  var lowercaseConfirm = window.prompt("Do you want to include lowercase characters into your password? Please type 'Y' or 'N'.", "'Y' or 'N'").toUpperCase();
+  // Validation for the character lowercase
+  while (!(lowercaseConfirm==='Y'||lowercaseConfirm==='N')){
+    lowercaseConfirm = window.prompt("Your selection was invalid! Plaese try again. Do you want to include lowercase characters into your password? Please type 'Y' or 'N'.").toUpperCase();
+  }
+}
+
+// If 'Y' is selected
+if (lowercaseConfirm==='Y'){
+  i++;
+}
 
 // Function for getting a random element from an array
 function getRandom(arr) {
