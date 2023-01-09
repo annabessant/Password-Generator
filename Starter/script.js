@@ -1,14 +1,18 @@
-// Array of special characters to be included in password
-var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',',')','(','}','{',']','[','~','-','_','.'];
+// Password Generator: 10 characters but no more than 64
 
-// Array of numeric characters to be included in password
-var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+// create a var for the Generate function
+var generateBtn = document.querySelector("#generate");
 
-// Array of lowercase characters to be included in password
-var lowerCasedCharacters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+// make Password generator function
+function generatePassword (){
+  var generatedPassword = '';
+}
 
-// Array of uppercase characters to be included in password
-var upperCasedCharacters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+    // Character types
+    var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',',')','(','}','{',']','[','~','-','_','.'];
+    var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    var lowerCasedCharacters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+    var upperCasedCharacters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
 // Function to prompt user for password options
 function getPasswordOptions() {
