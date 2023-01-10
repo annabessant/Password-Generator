@@ -73,7 +73,30 @@ if (uppercaseConfirm==='Y'){
   i++;
 }
 
-
+// Generate the password
+while (j<parseInt(passwordLength)){
+  //Choose any random numeric charater type
+  if (numericConfirm==='Y'){
+    generatePassword = generatePassword.concat(numericCharacters[Math.floor(Math.random()*numericCharacters.length)]);
+    j++;
+  }
+  //Choose any random special character type
+  if (specialCharactersConfirm==='Y'){
+    generatePassword = generatePassword.concat(specialCharacters[Math.floor(Math.random()*specialCharacters.length)]);
+    j++;
+  }
+  
+  //Choose any random lowercase character
+  if (lowercaseConfirm==='Y'){
+    generatePassword = generatePassword.concat(lowerCasedCharacters[(Math.floor(Math.random()*lowerCasedCharacters.length))]);
+    j++;
+  }
+  //Choose any random uppercase character
+  if (uppercaseConfirm==='Y'){
+    generatePassword = generatePassword.concat(upperCasedCharacters[(Math.floor(Math.random()*upperCasedCharacters.length))]);
+    j++;
+  }
+}
 
 // Function to prompt user for password options
 function getPasswordOptions() {
