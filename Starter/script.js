@@ -5,8 +5,7 @@ var generateBtn = document.querySelector('#generate');
 
 // Function to generate password with user input
 function generatePassword(){
-  var generatedPassword = '';
-}
+  var generatedPassword = [];
 
   // Four character types options
   var lowerCasedCharacters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
@@ -72,31 +71,38 @@ while (i===0){
   i++;
   }
 }
-
+var validPasswordCharacters = [];
 // Generate the password
 while (j<parseInt(passwordLength)){
   //Choose any random lowercase character
   if (lowercaseConfirm==='Y'){
     generatedPassword = generatedPassword.concat(lowerCasedCharacters[(Math.floor(Math.random()*lowerCasedCharacters.length))]);
+    validPasswordCharacters = validPasswordCharacters.concat(lowerCasedCharacters);
     j++;
   }
   //Choose any random uppercase character
   if (uppercaseConfirm==='Y'){
     generatedPassword = generatedPassword.concat(upperCasedCharacters[(Math.floor(Math.random()*upperCasedCharacters.length))]);
+    validPasswordCharacters = validPasswordCharacters.concat(upperCasedCharacters);
     j++;
   }
   //Choose any random numeric charater type
   if (numericConfirm==='Y'){
     generatedPassword = generatedPassword.concat(numericCharacters[(Math.floor(Math.random()*numericCharacters.length))]);
+    validPasswordCharacters = validPasswordCharacters.concat(numericCharacters);
     j++;
   }
   //Choose any random special character type
   if (specialCharactersConfirm==='Y'){
     generatedPassword = generatedPassword.concat(specialCharacters[(Math.floor(Math.random()*specialCharacters.length))]);
+    validPasswordCharacters = validPasswordCharacters.concat(specialCharacters);
     j++;
   }
 }
-
+for (var i=j; i<passwordLength; i++){
+  generatedPassword = generatedPassword.concat(validPasswordCharacters[(Math.floor(Math.random()*validPasswordCharacters))]); 
+}
+return generatedPassword.join("");
 // Return the generated password to the writePassword() function
 // return generatedPassword;
 
@@ -109,7 +115,7 @@ while (j<parseInt(passwordLength)){
 // function getRandom(arr) {
 
 // }
-
+}
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
