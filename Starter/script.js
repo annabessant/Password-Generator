@@ -98,7 +98,7 @@ while (j<parseInt(passwordLength)){
 }
 
 // Return the generated password to the writePassword() function
-return generatedPassword;
+// return generatedPassword;
 
 // Function to prompt user for password options
 // function getPasswordOptions() {
