@@ -25,52 +25,52 @@ while (!(parseInt(passwordLength)>=10 && parseInt(passwordLength)<=64)){
   passwordLength = parseInt(window.prompt("Your selection was incorrect! Please try again! How long do you want your password to be? Please select from min 10 to max 64 characters!", "Select the password length, e.g. '12'"));
 }
 
-console.log('Password lemgth: ',passwordLength);
+console.log('Password length: ',passwordLength);
 
 while (i===0){
-  //Prompt for the character type: numeric
-  var numericConfirm = window.prompt("Do you want to include numeric characters into your password? Please type'Y' or 'N'.", "'Y' or 'N'").toUpperCase();
-  //Validation for the numeric character
-  while (!(numericConfirm==='Y'||numericConfirm==='N')){
-    numericConfirm = window.prompt("Your selection was incorrect! Please try again! Do you want to include numeric characters into your password? Please type 'Y' or 'N'.").toUpperCase();
-  }
-  //If 'Y' is selected
-  if (numericConfirm==='Y'){
+    //Prompt for the character type: numeric
+    var numericConfirm = window.prompt("Do you want to include numeric characters into your password? Please type'Y' or 'N'.", "'Y' or 'N'").toUpperCase();
+    //Validation for the numeric character
+    while (!(numericConfirm==='Y'||numericConfirm==='N')){
+      numericConfirm = window.prompt("Your selection was incorrect! Please try again! Do you want to include numeric characters into your password? Please type 'Y' or 'N'.").toUpperCase();
+    }
+    //If 'Y' is selected
+    if (numericConfirm==='Y'){
+      i++;
+    }
+  
+    //Prompt for the character type: special
+    var specialCharactersConfirm = window.prompt("Do you want to include special characters into your password? Please type 'Y' or 'N'.", "'Y' or 'N'").toUpperCase();
+    //Validation for the special character
+    while (!(specialCharactersConfirm==='Y'||specialCharactersConfirm==='N')){
+      specialCharactersConfirm = window.prompt("Your selection was incorrect! Please try again! Do you want to include special characters into your password? Please type 'Y' or 'N'.").toUpperCase();
+    }
+    //If 'Y' is selected
+    if (specialCharactersConfirm==='Y'){
+      i++;
+    }
+  
+    // Prompt for the character type: lowercase
+    var lowercaseConfirm = window.prompt("Do you want to include lowercase characters into your password? Please type 'Y' or 'N'.", "'Y' or 'N'").toUpperCase();
+    // Validation for the character lowercase
+    while (!(lowercaseConfirm==='Y'||lowercaseConfirm==='N')){
+      lowercaseConfirm = window.prompt("Your selection was invalid! Plaese try again. Do you want to include lowercase characters into your password? Please type 'Y' or 'N'.").toUpperCase();
+    }
+  // If 'Y' is selected
+  if (lowercaseConfirm==='Y'){
     i++;
   }
-  
-  //Prompt for the character type: special
-  var specialCharactersConfirm = window.prompt("Do you want to include special characters into your password? Please type 'Y' or 'N'.", "'Y' or 'N'").toUpperCase();
-  //Validation for the special character
-  while (!(specialCharactersConfirm==='Y'||specialCharactersConfirm==='N')){
-    specialCharactersConfirm = window.prompt("Your selection was incorrect! Please try again! Do you want to include special characters into your password? Please type 'Y' or 'N'.").toUpperCase();
-  }
-  //If 'Y' is selected
-  if (specialCharactersConfirm==='Y'){
-    i++;
-  }
-  
-  // Prompt for the character type: lowercase
-  var lowercaseConfirm = window.prompt("Do you want to include lowercase characters into your password? Please type 'Y' or 'N'.", "'Y' or 'N'").toUpperCase();
-  // Validation for the character lowercase
-  while (!(lowercaseConfirm==='Y'||lowercaseConfirm==='N')){
-    lowercaseConfirm = window.prompt("Your selection was invalid! Plaese try again. Do you want to include lowercase characters into your password? Please type 'Y' or 'N'.").toUpperCase();
-  }
-}
-// If 'Y' is selected
-if (lowercaseConfirm==='Y'){
-  i++;
-}
 
-// Prompt for the character type: uppercase
-var uppercaseConfirm = window.prompt("Do you want to include uppercase characters into your password? Please type 'Y' or 'N'.", "'Y' or 'N'").toUpperCase();
-// Validation for the character uppercase
-while (!(uppercaseConfirm==='Y'||uppercaseConfirm==='N')){
-  uppercaseConfirm=window.prompt("Your selection was invalid! Please try again. Do you want to include lowercase characters into your password? Please type 'Y' or 'N'.").toUpperCase();
-}
-//If 'Y' is selected
-if (uppercaseConfirm==='Y'){
-  i++;
+  // Prompt for the character type: uppercase
+  var uppercaseConfirm = window.prompt("Do you want to include uppercase characters into your password? Please type 'Y' or 'N'.", "'Y' or 'N'").toUpperCase();
+  // Validation for the character uppercase
+  while (!(uppercaseConfirm==='Y'||uppercaseConfirm==='N')){
+    uppercaseConfirm=window.prompt("Your selection was invalid! Please try again. Do you want to include lowercase characters into your password? Please type 'Y' or 'N'.").toUpperCase();
+  }
+  //If 'Y' is selected
+  if (uppercaseConfirm==='Y'){
+    i++;
+  }
 }
 
 // Generate the password
@@ -80,6 +80,7 @@ while (j<parseInt(passwordLength)){
     generatePassword = generatePassword.concat(numericCharacters[Math.floor(Math.random()*numericCharacters.length)]);
     j++;
   }
+  
   //Choose any random special character type
   if (specialCharactersConfirm==='Y'){
     generatePassword = generatePassword.concat(specialCharacters[Math.floor(Math.random()*specialCharacters.length)]);
@@ -97,6 +98,9 @@ while (j<parseInt(passwordLength)){
     j++;
   }
 }
+
+// Return the generated password to the writePassword() function
+return generatePassword;
 
 // Function to prompt user for password options
 function getPasswordOptions() {
