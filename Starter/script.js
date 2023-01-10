@@ -31,7 +31,7 @@ while (i===0){
   var lowercaseConfirm = window.prompt("Do you want to include lowercase characters into your password? Please type 'Y' or 'N'.", "'Y' or 'N'").toUpperCase();
   // Validation for the character lowercase
   while (!(lowercaseConfirm==='Y'||lowercaseConfirm==='N')){
-  lowercaseConfirm = window.prompt("Your selection was invalid! Plaese try again. Do you want to include lowercase characters into your password? Please type 'Y' or 'N'.").toUpperCase();
+  lowercaseConfirm = window.prompt("Your selection was invalid! Please try again. Do you want to include lowercase characters into your password? Please type 'Y' or 'N'.").toUpperCase();
   }
   // If 'Y' is selected
   if (lowercaseConfirm==='Y'){
